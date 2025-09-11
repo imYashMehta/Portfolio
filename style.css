@@ -1,0 +1,97 @@
+
+        /* Custom styles for glassmorphism, timeline, and other effects */
+        :root {
+            --bg-light: #f1f5f9;
+            --bg-dark: #0f172a;
+            --text-light: #0f172a;
+            --text-dark: #e2e8f0;
+            --card-light: rgba(255, 255, 255, 0.6);
+            --card-dark: rgba(30, 41, 59, 0.5);
+            --border-light: rgba(203, 213, 225, 0.5);
+            --border-dark: rgba(51, 65, 85, 0.5);
+            --blur: 10px;
+        }
+
+        html.dark {
+            --bg-color: var(--bg-dark);
+            --text-color: var(--text-dark);
+            --card-bg: var(--card-dark);
+            --border-color: var(--border-dark);
+        }
+
+        html:not(.dark) {
+            --bg-color: var(--bg-light);
+            --text-color: var(--text-light);
+            --card-bg: var(--card-light);
+            --border-color: var(--border-light);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .glassmorphic {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            -webkit-backdrop-filter: blur(var(--blur));
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .sticky-nav {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Timeline styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid var(--border-color);
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.7rem;
+            top: 0;
+            height: 1.25rem;
+            width: 1.25rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Animation observer class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Testimonial slider */
+        .testimonial-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .testimonial-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+ 
