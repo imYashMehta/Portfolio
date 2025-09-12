@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // --- IMPORTANT ---
                 // You must replace "YOUR_ACCESS_KEY_HERE" with your actual access key from web3forms.com
-                if (object.access_key === 'YOUR_ACCESS_KEY_HERE') {
+                if (object.access_key === '57b0798a-5a39-44cf-852a-610879c2d6ef') {
                     formStatus.innerHTML = `<p class="text-yellow-500 font-semibold">Please add your Access Key in the HTML file to enable form submission.</p>`;
                     return;
                 }
